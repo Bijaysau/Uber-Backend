@@ -74,28 +74,34 @@ Welcome to the **Backend** of the Uber Clone project — a powerful and scalable
 
 ```
 ├── controllers/        # Route logic (user, driver, ride, payment)
-│   ├── userController.js
-│   ├── captainController.js
-│   ├── rideController.js
-│   └── paymentController.js
+│   ├── user.controller.js
+│   ├── captain.controller.js
+│   ├── ride.controller.js
+│   └──map.controller.js
 ├── models/             # Mongoose schemas
-│   ├── User.js
-│   ├── Captain.js
-│   ├── Ride.js
-│   └── Payment.js
+│   ├── user.model.js
+│   ├── captain.model.js
+│   ├── ride.model.js
+│   └── blacklistToken.model.js
 ├── routes/             # Express routes
 │   ├── user.routes.js
 │   ├── captain.routes.js
+    ├── maps.routes.js
 │   ├── ride.routes.js
-│   └── payment.routes.js
+│   └── payment.js
 ├── db/                 # MongoDB connection
 │   └── db.js
-├── socket/             # Real-time socket logic
-│   └── socket.js
 ├── middleware/         # Auth & custom middleware
-│   └── auth.js
-├── .env                # Environment variables
-└── server.js           # App entry point
+│   └── auth.middleware.js
+├── services/             
+│   ├── user.service.js
+│   ├── captain.service.js
+    ├── maps.service.js
+│   ├── ride.service.js
+├── .env # Environment variables
+└── app.js               
+└── server.js   # App entry point
+└── socket.js         # Real-time socket logic
 ```
 
 ---
@@ -105,12 +111,12 @@ Welcome to the **Backend** of the Uber Clone project — a powerful and scalable
 ### 👤 User Routes (`/users`)
 - `POST /signup` – Register a new user  
 - `POST /login` – Login as user  
-- `GET /me` – Get user profile (auth required)
+- `GET /home` – Get user profile (auth required)
 
 ### 🚗 Driver Routes (`/captains`)
 - `POST /signup` – Register a new driver  
 - `POST /login` – Login as driver  
-- `GET /me` – Get driver profile (auth required)
+- `GET /captains/home` – Get driver profile (auth required)
 
 ### 📦 Ride Routes (`/rides`)
 - `POST /` – Create a new ride request  
