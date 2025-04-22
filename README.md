@@ -81,10 +81,7 @@ POST /api/payments/intent – Create a new Stripe payment intent for online paym
 Map Routes (/maps)
 GET /maps/distance – Calculate distance between user and driver using Haversine formula.
 
-📝 Project Structure
-bash
-Copy
-Edit
+### **📝 Project Structure**
 ├── controllers/      # Business logic for handling routes
 │   ├── userController.js
 │   ├── captainController.js
