@@ -134,9 +134,10 @@ Welcome to the **Backend** of the Uber Clone project — a powerful and scalable
 
 ## 🌍 Deployment
 
-- Deploy backend to **Render**, **Railway**, or **Vercel Serverless**  
-- Add environment variables in the deployment dashboard  
-- Test your endpoints using **Postman** or **Insomnia**
+🔗 **Backend URL:** [https://tts-backend-5jnm.onrender.com](https://uber-backend-8ini.onrender.com)
+
+🔗 **Live App on Vercel:** 🌍 [Check it Out](uber-frontend-o6g295t3u-bijaysaus-projects.vercel.app)
+
 
 ---
 
