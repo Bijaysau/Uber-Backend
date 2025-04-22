@@ -48,7 +48,10 @@ Create a .env file in the root directory of the project and add the necessary co
 
 5. Run the development server:
    npm start
-📝 API Endpoints
+
+
+
+### **📝 API Endpoints**
 User Routes (/users)
 POST /users/signup – Create a new user account.
 
