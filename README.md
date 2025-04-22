@@ -1,152 +1,119 @@
-# 🚗 Uber Clone - Backend
+🚖 Uber Clone – Backend
+Welcome to the Backend of the Uber Clone project — a powerful and scalable ride-booking system built with Node.js, Express, MongoDB, and Socket.IO. This service powers ride management, driver interaction, real-time communication, secure payments, and location tracking.
 
-This is the **backend** of the Uber Clone application. It handles user and driver authentication, ride management, real-time communication, and payment processing. The backend is powered by **Node.js**, **Express.js**, **MongoDB**, **Socket.IO**, and **Stripe**.
+🌟 Key Features
+🔐 Authentication & Authorization
+Secure login and signup for users and drivers using JWT and bcrypt.
 
----
+🛺 Ride Booking System
+Book rides, assign drivers, estimate fares, and track rides in real-time.
 
-## 📌 Features
+💳 Stripe Payment Integration
+Users can pay online with Stripe, and the fare is added to the driver’s wallet.
 
-- 🔐 **Authentication**  
-  Secure login and signup for users and drivers using **JWT** and **bcrypt**.
+📡 Real-Time Communication
+Live updates between users and drivers using Socket.IO.
 
-- 🛺 **Ride Management**  
-  Users can book rides, and drivers can accept or decline them. Dynamic fare estimation and ride tracking included.
+📍 Geolocation & Distance Calculation
+Accurate fare estimates with the Haversine Formula based on distance.
 
-- 🧑‍✈️ **Driver Interaction**  
-  Real-time driver availability, request handling, and ride status updates.
+🚦 Driver Dashboard Logic
+Drivers get ride requests, can Accept/Decline, and view estimated time to reach the user.
 
-- 💳 **Payment Gateway**  
-  Online payments supported using **Stripe** for secure and seamless transactions.
+🛠 Tech Stack
+Node.js – Backend runtime
 
-- 🔄 **Real-Time Updates**  
-  Implemented using **Socket.IO** for ride requests, status updates, and driver actions.
+Express.js – REST API framework
 
-- 📍 **Geolocation Support**  
-  Distance calculations using the **Haversine Formula** for accurate fare and ETA estimations.
+MongoDB + Mongoose – NoSQL database & ODM
 
----
+Socket.IO – Real-time communication
 
-## 🔧 Tech Stack
+JWT – Token-based authentication
 
-| Technology     | Description                                       |
-|----------------|---------------------------------------------------|
-| **Node.js**     | Backend JavaScript runtime                        |
-| **Express.js**  | Web framework for API development                 |
-| **MongoDB**     | NoSQL database for user and ride data             |
-| **Mongoose**    | MongoDB object modeling tool                      |
-| **JWT**         | Token-based authentication                        |
-| **bcrypt**      | Password encryption for security                  |
-| **Socket.IO**   | Real-time bi-directional communication            |
-| **Stripe API**  | Payment integration for online transactions       |
-| **Haversine**   | Algorithm for distance calculation using geo-coordinates |
+bcrypt – Secure password hashing
 
----
+Stripe – Online payments
 
-## 🚀 Getting Started
+Haversine-distance – Distance calculation
 
-### 1. Clone the Repository
+dotenv – Manage environment variables
 
-```bash
+🚀 Getting Started
+Clone the Repository
 git clone https://github.com/your-username/uber-clone-backend.git
 cd uber-clone-backend
-2. Install Dependencies
-bash
-Copy
-Edit
-npm install
-3. Set Up Environment Variables
-Create a .env file in the root directory and add the following:
 
-env
-Copy
-Edit
+Install Dependencies
+npm install
+
+Configure Environment Variables
+Create a .env file in the root directory and add:
+
 PORT=4000
 MONGO_URI=your-mongodb-uri
 JWT_SECRET=your-jwt-secret
 GOOGLE_MAP_API=your-google-maps-api-key
 STRIPE_SECRET_KEY=your-stripe-secret-key
-4. Start the Server
-bash
-Copy
-Edit
+
+Run the Server
 npm start
-Server will be running at http://localhost:4000
 
-📁 Project Structure
-bash
-Copy
-Edit
-├── controllers/          # Route handlers and business logic
-│   ├── userController.js
-│   ├── captainController.js
-│   ├── rideController.js
-│   └── paymentController.js
+📂 Folder Structure
+├── controllers → Route logic (user, driver, ride, payment)
+├── models → Mongoose schemas (User, Captain, Ride, Payment)
+├── routes → Express API routes
+├── db → Database connection
+├── socket → Real-time socket events
+├── middleware → Authentication/Authorization
+├── .env → Secrets and keys
+└── server.js → App entry point
 
-├── models/               # Mongoose schemas
-│   ├── User.js
-│   ├── Captain.js
-│   ├── Ride.js
-│   └── Payment.js
-
-├── routes/               # API routes
-│   ├── user.routes.js
-│   ├── captain.routes.js
-│   ├── ride.routes.js
-│   └── payment.routes.js
-
-├── db/                   # MongoDB connection
-│   └── db.js
-
-├── socket/               # Socket.IO configuration
-│   └── socket.js
-
-├── middleware/           # Custom middleware (e.g. auth)
-│   └── auth.js
-
-├── .env                  # Environment variables
-
-└── server.js             # Main entry point
-🧪 API Endpoints
+📡 API Endpoints Overview
 👤 User Routes (/users)
 POST /signup – Register a new user
 
-POST /login – Login existing user
+POST /login – Login as user
 
-GET /me – Get current user profile (requires token)
+GET /me – Get user profile (auth required)
 
-🚖 Captain Routes (/captains)
+🚗 Driver Routes (/captains)
 POST /signup – Register a new driver
 
-POST /login – Login existing driver
+POST /login – Login as driver
 
-GET /me – Get current driver profile (requires token)
+GET /me – Get driver profile (auth required)
 
 📦 Ride Routes (/rides)
 POST / – Create a new ride request
 
-GET /:id – Get ride by ID
+GET /:id – Get ride details by ID
 
-POST /:id/accept – Driver accepts ride
+POST /:id/accept – Accept a ride (driver)
 
-POST /:id/decline – Driver declines ride
+POST /:id/decline – Decline a ride (driver)
 
 💸 Payment Routes (/api/payments)
-POST /intent – Create a new Stripe payment intent
+POST /intent – Create Stripe payment intent
 
-🗺️ Map Routes (/maps)
-GET /distance – Calculate distance using Haversine
+🗺 Map Routes (/maps)
+GET /distance – Calculate distance using coordinates
 
-🌐 Deployment
-You can deploy this backend on Render, Heroku, Railway, or any cloud platform.
+🌍 Deployment
+Deploy backend to Render, Railway, or Vercel Serverless
 
-Push code to GitHub
+Add environment variables in the deployment dashboard
 
-Connect your GitHub repo in the platform
+Test your endpoints using Postman or Insomnia
 
-Set your environment variables
+🙌 Contributing
+We welcome contributions! Feel free to fork this repo, submit PRs, or open issues. Every bit helps.
 
-Deploy 🚀
+📬 Contact
+GitHub: @your-username
 
-🤝 Contributing
-Contributions are welcome!
-Feel free to open issues or submit pull requests for improvements or bug fixes.
+LinkedIn: linkedin.com/in/your-profile
+
+Email: your.email@example.com
+
+Made with ❤️ using Node.js & Socket.IO. This project fuels real-time journeys — fast, reliable, and connected.
