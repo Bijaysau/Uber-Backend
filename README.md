@@ -82,6 +82,7 @@ Map Routes (/maps)
 GET /maps/distance – Calculate distance between user and driver using Haversine formula.
 
 ### **📝 Project Structure**
+```bash
 ├── controllers/      # Business logic for handling routes
 │   ├── userController.js
 │   ├── captainController.js
